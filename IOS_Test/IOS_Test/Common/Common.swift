@@ -14,7 +14,7 @@ struct Constants {
     static let ErrorAlertMessage = "Something Went Wrong.No Joke Found"
     static let JokeUserDefaultKey = "jokes"
     static let JokesLimit = 10
-    static let Joke_ApiCall_Interval = 5
+    static let Joke_ApiCall_Interval = 60
 }
 struct ApiEndpoints
 {
