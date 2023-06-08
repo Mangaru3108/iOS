@@ -21,7 +21,7 @@ class JokeViewController: UIViewController {
         let httpUtility = HttpUtility()
         viewModel = JokeViewModel(httpUtility: httpUtility)
         setupUI()
-        getSavedOldJoks()
+        getAllJoks()
     }
     
     //Creating Header and TableView programmatically using autolayout(without xib and storyboard)
@@ -55,7 +55,7 @@ class JokeViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    private func getSavedOldJoks()
+    private func getAllJoks()
     {
         //get saved jokes from userdefault to diplay otherwise get from api
         viewModel?.getSavedJokes { jokes in
@@ -66,11 +66,8 @@ class JokeViewController: UIViewController {
                     self.tableView.reloadData()
                 }
             }
-            else
-            {
-                //get jokes from api
-                fetchJokes()
-            }
+            //get jokes from api
+            fetchJokes()
         }
     }
     
